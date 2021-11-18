@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+
+import { Routes, Route, Link } from "react-router-dom";
+
+import Nav from './layout/Nav';
+
+import Countclic from "./components/countclic/Countclic";
+import Atelierapi from './components/atelierapi/Atelierapi';
+import Colorselector from './components/colorselector/Colorselector';
+
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <Header />
+     <Nav/>
+     <main className="container my-5">
+      <Routes>
+        <Route path="/" element={<Countclic />} />
+        <Route path="/home" element={<Countclic />} />
+        <Route path="/atelierapi" element={<Atelierapi />} />
+        <Route path="/colorselector" element={<Colorselector />} />
+      </Routes>
+     </main>
+     <Footer />
     </div>
   );
 }
